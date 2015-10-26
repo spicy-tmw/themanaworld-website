@@ -12,8 +12,9 @@ if (!defined('MEDIAWIKI')) {
     exit;
 }
 
-$wgSitename      = "The Mana World (Testing)";
-$wgMetaNamespace = "TheManaWorld";
+$wgSitename      = "The Spicy Mana World";
+$wgMetaNamespace = "TheSpicyManaWorld";
+
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -60,6 +61,10 @@ foreach ($actions as $action) {
 $wgArticlePath = $wgActionPaths['view'];
 
 
+## The relative URL path to the skins directory
+$wgStylePath     = "$wgScriptPath/skins";
+
+$wgLogo = "$wgStylePath/global/images/spicy-logo.png";
 
 // Select the enviroment-dependant settings
 if (!file_exists("$IP/env/selector.php")) {
