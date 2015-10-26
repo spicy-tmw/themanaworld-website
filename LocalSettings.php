@@ -32,10 +32,32 @@ $wgRightsIcon = "{$wgStylePath}/common/images/gnu-fdl.png";
 ## For more information on customizing the URLs please see:
 ## http://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath      = "";
-$wgArticlePath     = "/view/$1";
+// $wgArticlePath     = "/view/$1";
 $wgScriptExtension = ".php";
 $wgUsePathInfo     = true;
 
+$actions = array(
+  'view',
+  'edit',
+  'watch',
+  'unwatch',
+  'delete',
+  'revert',
+  'rollback',
+  'protect',
+  'unprotect',
+  'markpatrolled',
+  'render',
+  'submit',
+  'history',
+  'purge',
+  'info'
+);
+
+foreach ($actions as $action) {
+    $wgActionPaths[$action] = "/$action/$1";
+}
+$wgArticlePath = $wgActionPaths['view'];
 
 
 
