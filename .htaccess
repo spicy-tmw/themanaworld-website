@@ -4,8 +4,9 @@
 RewriteEngine On
 
 # Short url for wiki pages
-RewriteRule ^/?view(/.*)?$ %{DOCUMENT_ROOT}/index.php [L]
-RewriteRule ^/?([a-z]*)/(.*)$ %{DOCUMENT_ROOT}/index.php [L,QSA]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-f
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
+RewriteRule ^/?([a-z]*)/(.*)?$ %{DOCUMENT_ROOT}/index.php [L,QSA]
 
 # Redirect / to Main Page
 RewriteRule ^/*$ %{DOCUMENT_ROOT}/index.php [L]
