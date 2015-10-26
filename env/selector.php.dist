@@ -1,0 +1,14 @@
+<?php
+/**
+ * Select the right enviroment-dependant settings
+ */
+# Protect against web entry
+if (!defined('MEDIAWIKI')) {
+    exit;
+}
+
+if (basename(basename($IP)) == 'themanaworld-website') {
+    require_once "$IP/env/Local.php";
+} else {
+    require_once "$IP/env/Remote.php";
+}
