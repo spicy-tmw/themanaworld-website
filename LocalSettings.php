@@ -1,5 +1,5 @@
 <?php
-#
+# Global Settings
 # See includes/DefaultSettings.php for all configurable settings
 # and their default values, but don't forget to make changes in _this_
 # file, not there.
@@ -22,6 +22,21 @@ $wgRightsPage = ""; # Set to the title of a wiki page that describes your licens
 $wgRightsUrl  = "http://www.gnu.org/copyleft/fdl.html";
 $wgRightsText = "Licencia de documentación libre de GNU 1.3 o posterior";
 $wgRightsIcon = "{$wgStylePath}/common/images/gnu-fdl.png";
+
+
+
+
+// Global pretty url (may be override in env-settings, should not)
+## The URL base path to the directory containing the wiki;
+## defaults for all runtime URL paths are based off of this.
+## For more information on customizing the URLs please see:
+## http://www.mediawiki.org/wiki/Manual:Short_URL
+$wgScriptPath      = "";
+$wgArticlePath     = "/view/$1";
+$wgScriptExtension = ".php";
+$wgUsePathInfo     = true;
+
+
 
 
 // Select the enviroment-dependant settings
